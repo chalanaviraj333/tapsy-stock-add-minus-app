@@ -1,0 +1,50 @@
+<ion-header collapse="condense">
+  <ion-toolbar color="primary">
+    <ion-title size="large">Get Product</ion-title>
+    <ion-buttons slot="end">
+        <ion-button slot="icon only" color="light" (click)="onCLickUpload()">
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-item id="inputItemID" class="ion-no-padding" lines="none">
+      <ion-label position="stacked">Product No</ion-label>
+      <ion-input (ionChange)="_ionChangeInput($event)" debounce="500" type="text" placeholder="No Sound? Please touch here" autofocus="true" clearInput></ion-input>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center ion-padding">
+    <ion-badge>Total Products: {{allHttpRequestService.allProdcuts.length}}</ion-badge>
+  </div>
+  <ion-card id="itemCardID" class="ion-activatable ripple-parent" *ngFor="let item of ordersNotUploaded">
+    <ion-card-header color="secondary" class="ion-no-padding">
+      <ion-label class="fontClass">BOX: {{item.shell + item.boxnumber}}</ion-label>
+        <ion-badge color="danger" class="badgeClass">{{item.date.toLocaleTimeString('en-US', options)}}</ion-badge>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col size="6">
+            <img class="productImage" src="{{item.image}}" height="150" />
+          </ion-col>
+          <ion-col size="6" class="ion-text-start">
+              <div class="marginClass">
+
+                  <ion-label color="danger" class="fontClass">{{item.productType}}</ion-label>
+
+                <ion-label class="ion-text-nowrap">
+                  <ion-label color="medium" class="fontClass">LEFT </ion-label>
+                  <ion-label color="dark" class="fontClass">{{item.numberofItemsAvailble}}</ion-label>
+                </ion-label>
+              </div>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

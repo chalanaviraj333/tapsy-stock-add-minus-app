@@ -1,0 +1,7 @@
+{
+  "name": "stockaddminusapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

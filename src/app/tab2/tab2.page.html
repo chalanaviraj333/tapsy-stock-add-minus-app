@@ -1,0 +1,47 @@
+<ion-header collapse="condense">
+  <ion-toolbar color="primary">
+    <ion-title size="large">48 Hours</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card id="itemCardID" class="ion-activatable ripple-parent" *ngFor="let item of localStorageService.ordersNotUploaded">
+    <ion-card-header color="secondary" class="ion-no-padding">
+      <ion-label class="headerClass">BOX: {{item.shell + item.boxnumber}}</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col size="6">
+            <img class="productImage" src="{{item.image}}" height="150" />
+          </ion-col>
+          <ion-col size="6" class="ion-text-start">
+              <div class="marginClass">
+
+                  <ion-label color="danger" class="fontClass">{{item.productType}}</ion-label>
+
+                <ion-label class="ion-text-nowrap">
+                  <ion-label color="medium" class="fontClass">LEFT </ion-label>
+                  <ion-label color="dark" class="fontClass">{{item.numberofItemsAvailble}}</ion-label>
+                </ion-label>
+                <ion-label class="ion-text-nowrap">
+                  <ion-label color="medium" class="fontClass">Day </ion-label>
+                  <ion-label color="dark" class="fontClass">{{item.date.toLocaleTimeString('en-US', dayoptions)}}</ion-label>
+                </ion-label>
+                <ion-label class="ion-text-nowrap">
+                  <ion-label color="medium" class="fontClass">Date </ion-label>
+                  <ion-label color="dark" class="fontClass">{{item.date.toLocaleTimeString('en-US', options)}}</ion-label>
+                </ion-label>
+                <ion-label class="ion-text-nowrap">
+                  <ion-label color="medium" class="fontClass">Time </ion-label>
+                  <ion-label color="dark" class="fontClass">{{item.date.toLocaleTimeString('en-US', timeOption)}}</ion-label>
+                </ion-label>
+              </div>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
