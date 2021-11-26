@@ -26,7 +26,7 @@ export class AllLocalStorageRequestService {
 
         if (itemDate < currentDate) {
           this.ordersNotUploaded.push({
-            key: null,
+            key: item.key,
             tapsycode: item.tapsycode,
             shell: item.shell,
             boxnumber: item.boxnumber,

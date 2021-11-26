@@ -15,6 +15,9 @@ export class HttprequestsService {
 
   // get all remotes from database
   getAllRemotes() {
+    this.allProdcuts = [];
+    this.allRemotes = [];
+
     this.http
       .get<{ [key: string]: Remote }>(
         'https://tapsystock-a6450-default-rtdb.firebaseio.com/remotes.json'
@@ -51,6 +54,8 @@ export class HttprequestsService {
 
   // get remote shells
   getAllRemoteShells() {
+    this.allRemoteShells = [];
+
     this.http
       .get<{ [key: string]: RemoteShell }>(
         "https://tapsystock-a6450-default-rtdb.firebaseio.com/remote-shells.json"

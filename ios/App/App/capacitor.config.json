@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "stockaddminusapp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
