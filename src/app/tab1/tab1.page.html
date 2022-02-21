@@ -1,10 +1,10 @@
 <ion-header collapse="condense">
   <ion-toolbar color="primary"></ion-toolbar>
   <ion-toolbar color="primary">
-    <ion-title size="large">Get Product</ion-title>
+    <ion-title size="large">Find Product</ion-title>
     <ion-buttons slot="end">
-        <ion-button slot="icon only" color="light" (click)="onCLickUpload()">
-        <ion-icon name="cloud-upload-outline"></ion-icon>
+        <ion-button slot="icon only" color="light" (click)="onClickRefresh()">
+        <ion-icon name="refresh-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -20,10 +20,9 @@
   <div class="ion-text-center ion-padding">
     <ion-badge>Total Products: {{allHttpRequestService.allProdcuts.length}}</ion-badge>
   </div>
-  <ion-card id="itemCardID" class="ion-activatable ripple-parent" *ngFor="let item of ordersNotUploaded">
+  <ion-card id="itemCardID" class="ion-activatable ripple-parent" *ngFor="let item of itemsOrdered">
     <ion-card-header color="secondary" class="ion-no-padding">
       <ion-label class="fontClass">BOX: {{item.shell + item.boxnumber}}</ion-label>
-        <ion-badge color="danger" class="badgeClass">{{item.date.toLocaleTimeString('en-US', options)}}</ion-badge>
     </ion-card-header>
     <ion-card-content>
       <ion-grid class="ion-no-padding">
